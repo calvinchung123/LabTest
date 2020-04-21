@@ -1,0 +1,5 @@
+sceneSetups:
+- path: C:/Users/chung/Documents/GitHub/GE2-2019-2020/GE2 Examples 2020/Assets/Scenes/HillWalker.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
