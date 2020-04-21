@@ -9,10 +9,12 @@ public class Trafficlight : MonoBehaviour
     public int numberOfObjects = 10;
     public float radius = 5f;
     private MeshRenderer meshRenderer;
-    private float timeToChange = 0.1f;
-    private float timeSinceChange = 0f;
+    //private float timeToChange = 0.1f;
+    //private float timeSinceChange = 0f;
+    //static public List gList;
     void Start()
     {
+       // glist = new List<prefab>();
         for (int i = 0; i < numberOfObjects; i++)
         {
 
@@ -22,11 +24,13 @@ public class Trafficlight : MonoBehaviour
             Vector3 pos = transform.position + new Vector3(x, 0, z);
             float angleDegrees = -angle * Mathf.Rad2Deg;
             Quaternion rot = Quaternion.Euler(0, angleDegrees, 0);
-            Instantiate(prefab, pos, rot);
-            prefab.GetComponent<MeshRenderer>().sharedMaterial.SetColor("_Color", Color.green);
-            meshRenderer = GetComponent<MeshRenderer>();
+            GameObject lights = Instantiate(prefab, pos, rot);
+            //prefab.gameObject.AddComponent<UnityEngine.MeshRenderer>();
+            //glist.Add(lights);
+            //prefab.GetComponent<MeshRenderer>().sharedMaterial.SetColor("_Color", Color.green);
             /* prefab.material.color = Color.red;*/
         }
+        
     }
 
     void update()
